@@ -6,6 +6,6 @@ Create a Custom drawer In Android
 
 Screenshots
 -----------
-![Alt text](https://github.com/arundidauli/CostumDrawer/blob/master/Screenshot_20210819-153435_CostumDrawer.jpg) 
+![Alt text](https://github.com/arundidauli/CostumDrawer/blob/master/Screenshot_20210819-154815_CostumDrawer.jpg) 
 
 
