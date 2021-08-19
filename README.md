@@ -6,6 +6,6 @@ Create a Custom drawer In Android
 
 Screenshots
 -----------
-![Alt text](/screen/img1.png?raw=true "App SceenShot") 
+![Alt text](https://github.com/arundidauli/CostumDrawer/blob/master/Screenshot_20210819-153435_CostumDrawer.jpg) 
 
 
