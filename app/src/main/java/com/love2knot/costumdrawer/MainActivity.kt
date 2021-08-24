@@ -1,25 +1,19 @@
 package com.love2knot.costumdrawer
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.View
-import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.love2knot.costumdrawer.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
+class MainActivity : AppCompatActivity(), NavItemAdapter.MyItemClickListener {
+    private lateinit var navController: NavController
+    private lateinit var drawerLayout: DrawerLayout
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,39 +22,53 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.appBarMain.fab.setOnClickListener {
+            val intent = Intent(applicationContext, DetailsActivity::class.java)
+            startActivity(intent)
         }
-        val drawerLayout: DrawerLayout = binding.drawerLayout
+        drawerLayout = binding.drawerLayout
 
-        val rvItem:RecyclerView=findViewById(R.id.rvItem)
-        rvItem.layoutManager=LinearLayoutManager(this)
-        rvItem.adapter=NavItemAdapter(this)
+        val rvItem: RecyclerView = findViewById(R.id.rvItem)
+        rvItem.layoutManager = LinearLayoutManager(this)
+        rvItem.adapter = NavItemAdapter(this)
+        binding.appBarMain.drawerMenu.setOnClickListener {
+            drawerLayout.open()
+        }
+        binding.appBarMain.searchBar.setOnClickListener {
+            //Search Click
+        }
+        binding.navHeader.imgCancel.setOnClickListener {
+            drawerLayout.close()
+        }
 
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        //navView.setupWithNavController(navController)
     }
 
-   /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }*/
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    override fun clicked(id: Int) {
+        Toast.makeText(applicationContext, "Clicked $id", Toast.LENGTH_LONG).show()
+        drawerLayout.closeDrawers()
+        when (id) {
+            0 -> {
+                navController.navigate(R.id.nav_home)
+            }
+            1 -> navController.navigate(R.id.nav_gallery)
+            2 -> navController.navigate(R.id.nav_slideshow)
+            3 -> navController.navigate(R.id.nav_slideshow)
+            4 -> navController.navigate(R.id.nav_gallery)
+            5 -> navController.navigate(R.id.nav_home)
+            6 -> navController.navigate(R.id.nav_gallery)
+            7 -> {
+
+            }
+            else -> showConfirmLogoutDialog()
+        }
     }
+
+    fun showConfirmLogoutDialog() {
+
+    }
+
 }

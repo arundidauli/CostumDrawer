@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.love2knot.costumdrawer.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.love2knot.costumdrawer.databinding.FragmentHomeBinding
+import com.love2knot.costumdrawer.ui.adapter.HorizontalItemAdapter
+import com.love2knot.costumdrawer.ui.adapter.VerticalItemAdapter
 
 class HomeFragment : Fragment() {
 
@@ -31,10 +31,12 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        binding.rvItemHorizontal.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvItemHorizontal.adapter = HorizontalItemAdapter(requireActivity())
+        binding.rvItemVertical.layoutManager = LinearLayoutManager(requireActivity())
+        binding.rvItemVertical.adapter = VerticalItemAdapter(requireActivity())
+
         return root
     }
 

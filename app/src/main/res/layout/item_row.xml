@@ -2,18 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
+    android:id="@+id/rlRoot"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:background="#082539">
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:background="@drawable/round_circle"
-        android:scaleType="fitCenter"
         android:padding="16dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_icon_ionic_ios_search" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Profile"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/txtSubHeading"
@@ -40,7 +41,7 @@
             android:paddingTop="5dp"
             android:text="See , edit your profile"
             android:textColor="#FFFFFF"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

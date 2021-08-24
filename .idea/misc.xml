@@ -3,14 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/ic_icon_ionic_ios_search.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/ic_scissors.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/logout_bg.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/round_circle.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/round_circle_black.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/round_circle_gary.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/round_corner.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/round_unselect.xml" value="0.2140625" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.1578125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_review.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_services.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/item_horizontal_row.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_row.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/item_vertical_row.xml" value="0.1578125" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/menu/main.xml" value="0.1" />
       </map>
